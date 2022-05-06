@@ -27,4 +27,6 @@ public class Product extends AuditModel {
 
 
     private String imageUrl;
+
+    private String productName;
 }
