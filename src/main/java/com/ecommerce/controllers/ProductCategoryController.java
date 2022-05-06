@@ -4,6 +4,7 @@ import com.ecommerce.entities.ProductCategory;
 import com.ecommerce.entities.ProductCategory;
 import com.ecommerce.entities.YesNo;
 import com.ecommerce.services.ProductCategoryService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -12,8 +13,9 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 import java.util.List;
 import java.util.Optional;
-
+@RestController
 @RequestMapping("/api/productCategories")
+@Tag(name = "Product Category API", description = "EndPoint for Products Categories")
 public class ProductCategoryController extends BaseController {
     private ProductCategoryService productCategoryService;
 

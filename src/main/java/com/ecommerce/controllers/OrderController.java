@@ -3,6 +3,7 @@ package com.ecommerce.controllers;
 import com.ecommerce.entities.Order;
 import com.ecommerce.entities.YesNo;
 import com.ecommerce.services.OrderService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -12,8 +13,9 @@ import javax.validation.Valid;
 import java.util.List;
 import java.util.Optional;
 
-
+@RestController
 @RequestMapping("/api/orders")
+@Tag(name = "Orders API", description = "EndPoint for Orders")
 public class OrderController extends BaseController {
     private OrderService orderService;
 

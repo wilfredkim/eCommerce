@@ -3,6 +3,7 @@ package com.ecommerce.controllers;
 import com.ecommerce.entities.Product;
 import com.ecommerce.entities.YesNo;
 import com.ecommerce.services.ProductService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -11,8 +12,10 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 import java.util.List;
 import java.util.Optional;
-
+@RestController
 @RequestMapping("/api/products")
+@Tag(name = "Product  API", description = "EndPoint for Products")
+
 public class ProductController extends BaseController {
     private ProductService productService;
 
