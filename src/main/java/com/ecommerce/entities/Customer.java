@@ -10,7 +10,7 @@ import javax.validation.constraints.Size;
 @Getter
 @Setter
 @Entity
-public class User extends AuditModel {
+public class Customer extends AuditModel {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;

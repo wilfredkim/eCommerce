@@ -1,7 +1,7 @@
 package com.ecommerce.services;
 
-import com.ecommerce.entities.User;
-import com.ecommerce.repositories.UserRepository;
+import com.ecommerce.entities.Customer;
+import com.ecommerce.repositories.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -12,32 +12,32 @@ import java.util.Optional;
 
 @Service
 @Transactional
-public class UserServiceImpl implements UserService {
+public class CustomerServiceImpl implements CustomerService {
 
-    private UserRepository repository;
+    private CustomerRepository repository;
 
     @Autowired
     private BCryptPasswordEncoder bCryptPasswordEncoder;
 
 
     @Autowired
-    public UserServiceImpl(UserRepository repository) {
+    public CustomerServiceImpl(CustomerRepository repository) {
         this.repository = repository;
     }
 
     @Override
-    public User save(User user) {
-        user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
-        return repository.save(user);
+    public Customer save(Customer customer) {
+        customer.setPassword(bCryptPasswordEncoder.encode(customer.getPassword()));
+        return repository.save(customer);
     }
 
     @Override
-    public Optional<User> findById(Long id) {
+    public Optional<Customer> findById(Long id) {
         return repository.findById(id);
     }
 
     @Override
-    public List<User> getList() {
+    public List<Customer> getList() {
         return repository.findAll();
     }
 }
